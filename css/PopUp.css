@@ -1,0 +1,552 @@
+:root {
+    --primary: #ffffff;
+    --secondary: #202020;
+    --tertiary: #e99801;
+    --darkTertiary: #ad7100;
+}
+
+#PopUp {
+    visibility: hidden;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#PopUp * {
+    z-index: inherit;
+}
+
+#PopUp.Show {
+    visibility: visible;
+}
+
+.PopUpVraag.Show {
+    visibility: visible;
+}
+
+.PopUpVraag {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#PopUpBackGround {
+    position: relative;
+    background-color: gray;
+    opacity: .65;
+    width: 100%;
+    height: 100%;
+}
+
+.PopUpNext {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary);
+    color: white;
+    background-color: white;
+    border-radius: 10px;
+    width: 30rem;
+    min-height: 20%;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 50px;
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1em;
+    max-height: 2em;
+}
+
+.PopUpNext P {
+    font-size:x-large;
+    position:inherit;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.PopUpNext:hover{
+    background: #e99801;
+    color: #ffffff;
+}
+
+#PopUpFront {
+    position: absolute;
+    background-color: var(--primary);
+    top: 50%;
+    left: 50%;
+    background-color: #202020;
+    opacity: 93%;
+    transform: translate(-50%, -50%);
+    width: 70rem;
+    height: 45rem;
+    border-radius: 3rem;
+}
+
+.PopUpVraag div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: inline-block;
+    position: inherit;
+    line-height: 1em;
+    max-height: 2em;
+    font-size: large;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 2%;
+    opacity: 100%;
+}
+
+.PopUpHolder {
+    position: absolute;
+    background-color: var(--secondary);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border-radius: 15px;
+    /*border: solid black 2px;*/
+    text-align: center;
+}
+
+/* Dit is bijna alle css gerelateerd aan de Locatie */
+/* #region Location */
+
+#PopUpDropDownButton {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 30rem;
+    min-height: 20%;
+    color: white;
+    border-radius: 50px;
+    overflow: hidden ;
+    padding: 0;
+}
+
+
+#PopUpDropDownButton p {
+
+    font-size: x-large;
+    position: fixed;
+    color: black;
+    width: 100%;
+    top: 3rem;
+    text-align: center;
+    
+}
+#PopUpDropDownButton:hover {
+    background: #e99801;
+    color: #ffffff;
+}
+
+#PopUpLocatieHolder {
+    visibility: hidden;
+    width: 100%;
+    height: 95%;
+    z-index: 4;
+}
+
+#LocatieButton {
+    position:relative;
+    display: inline-block;
+    background-color: white;
+    top: -6rem;
+    min-width: 35%;
+    min-height: 35%;
+    max-width: 35%;
+    max-height: 35%;
+    border-radius: 50px;  
+    margin: 15px;
+}
+
+#LocatieButton P {
+    font-size:x-large;
+    margin-top: 10%;
+    position: center;
+    top: 0.3rem;
+}
+
+#LocatieButton:hover{
+    background: #e99801;
+    color: #ffffff;
+}
+
+#PopUpLocatieHolder.Show {
+    visibility: visible;
+}
+
+
+/* #endregion */
+
+/* Dit is bijna alle css gerelateerd aan de services */
+/* #region Service*/
+
+#PopUpServiceHolder {
+    width: 85%;
+    height: 80%;
+    top: 40%;
+    overflow: hidden;
+}
+
+.PopUpServiceContainer {
+    position: relative;
+    display: inline-block;
+    background-color: #ffffff;
+    min-width: 30%;
+    min-height: 50%;
+    top: -7rem;
+    border-radius: 50px;  
+    align-content: center;
+    margin: 15px;
+
+}
+
+.PopUpServiceContainer p {
+    position: relative;
+    font-size: x-large;
+    margin-top: 15%;
+    color:rgb(0, 0, 0);
+}
+
+.PopUpServiceContainer input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+.PopUpServiceContainer:hover {
+    background-color: #e99801;
+}
+
+.PopUpServiceContainer.checked {
+    background-color:olivedrab;
+}
+
+.PopUpServiceContainer:hover.checked {
+    background-color:darkolivegreen;
+}
+
+#PopUpServiceNext {
+    top: 75%;
+}
+
+/* #endregion */
+
+/* Dit is bijna alle css gerelateerd aan de Kappers */
+/* #region Kapper */
+
+#PopUpKapperHolder {
+    width: 90%;
+    height: 70%;
+    top: 37.5%;
+}
+
+.PopUpKapperContainer {
+    display: inline-block;
+    overflow: Hidden;
+    height: fit-content;
+    cursor: pointer;
+    background-color: white;
+    border: black solid 1px;
+    border-radius: 5px;
+    text-align: center;
+    position:relative;
+    top: calc(100% / 2 - 150px);
+    max-width: 30%;
+    min-width: 20%;
+    margin: 15px;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;
+}
+.PopUpKapperContainer h4 {
+    margin-bottom: 5%px;
+}
+
+.PopUpKapperContainer img {
+    display: inherit;
+    margin: 15px;
+    border-radius: 5px;
+    width: 70%;
+    width:  9em;
+    height: 11em;
+    background-size: cover;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;
+
+}
+
+.PopUpKapperContainer:hover {
+    background-color: #e99801;
+}
+
+.PopUpKapperContainer:hover.checked {
+    background-color:olivedrab;
+}
+
+.PopUpKapperContainer.checked {
+    background-color:darkolivegreen;
+}
+
+.PopUpKapperContainer input {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+#PopUpKapperNext {
+    top: 85%;
+}
+
+/* #endregion */
+
+/* Dit is bijna alle css gerelateerd aan de Datum */
+/* #region Datum */
+ul {
+    list-style-type: none;
+
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
+/* Month header */
+.PopUpMonth {
+    padding: 35px 5px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background: var(--tertiary);
+    text-align: center;
+}
+
+/* Month list */
+.PopUpMonth ul {
+    margin: 0;
+    padding: 0;
+}
+
+.PopUpMonth ul li {
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.PopUpMonth .PopUpPrevMonth {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.PopUpMonth .PopUpNextMonth {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.PopUpWeekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.PopUpWeekdays li {
+    display: inline-block;
+    width: calc(100% / 7);
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) area */
+#PopUpDays {
+    padding: 10px 0;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius: 25px;
+    height: 100%;
+    background: #eee;
+    margin: 0;
+}
+
+/*weekdagen nummers*/
+#PopUpDays li {
+
+    list-style-type: none;
+    display: inline-block;
+    width: calc(100% / 7);
+    height: calc(100% / 6);
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
+/* Highlight the "current" day */
+#PopUpDays li .PopUpActive {
+    padding: 5px;
+    color: black;
+
+}
+
+#PopUpDays li .PopUpActive:hover{
+    background-color: #e99801;
+    border-radius: 30px;
+    transition: ease-in-out .3s;
+}
+
+#PopUpDays li .PopUpNotActive {
+    color: #c5c5c5;
+}
+
+/* #PopUpDays li .PopUpNotActive:hover{
+    background-color: #e99801;
+} */
+
+
+/* #endregion */
+
+/* Dit is bijna alle css gerelateerd aan de Tijd */
+/* #region Tijd */
+
+#PopUpTijden {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: rgb(0, 0, 0);
+    padding: 0;
+    width: 70%;
+    height: 90%;
+    overflow-y: auto;
+}
+
+input {
+    color:rgb(0, 0, 0)
+}
+
+#PopUpTijden li {
+    width: calc(100% / 2 - 2px);
+    display: inline-block;
+    min-width: 30%;
+    min-height: 15%;
+    max-width: 30%;
+    max-height: 15%;
+    border-radius: 50px;  
+    margin: 15px;
+    border: solid var(--secondary) 1px;
+    border-radius: 50px;
+    background-color: white;
+    font-size: large;
+    cursor: pointer;
+    user-select: none;
+    margin-top: 5px;
+    line-height: 55px;
+}
+
+#PopUpTijden li:hover {
+    background-color:  #e99801;
+}
+
+
+/* #endregion */
+
+/* Dit is bijna alle css gerelateerd aan de gegevens */
+/* #region Gegevens */
+
+#PopUpForm {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    background-color: var(--tertiary);
+    color: white;
+    padding: 10px;
+    height: 85%;
+}
+
+#PopUpForm input:not([type="submit"]) {
+    border: inset var(--secondary) 2px;
+    margin: 5px 10px;
+    left: 5%;
+    display: block;
+}
+
+#PopUpForm input[type="submit"] {
+    position:fixed;
+    left: 5%;
+    width: 90%;
+    top: 90%;
+    height: 8%;
+    background-color: black;
+    color: white;
+}
+
+/* #endregion */
+
+#PopUpTotaal {
+    overflow: hidden;
+    top: 50%;
+    height: 100%;
+}
+
+#PopUpTotaalHolder {
+    height: 100%;
+    width: 45%;
+    margin: 0;
+    padding: 0;
+}
+
+#PopUpTotaalHolder li {
+    margin: 5px;
+    font-size: medium;
+    color: white;
+    background-color: #e99801;
+    border-radius: 30px;
+    
+}
+
+/* dit is alle css van webkit */
+/* #region webkit */
+
+/* ::-webkit-scrollbar {
+    width: 20px;
+} */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+} */
+
+/* #endregion */
